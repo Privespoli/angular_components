@@ -13,6 +13,7 @@ import { FormularioService } from './components/formulario/formulario.service';
   // Cuando escribimos <app-root></app-root> en el HTML, 
   // Angular sabrá que tiene que dibujar este componente ahí.
   selector: 'app-root',
+  standalone: true, // Asegúrate de tener esto si usas 'imports' directamente
   
   // 'imports' son las otras piezas de Lego que necesitamos usar dentro de esta.
   // Como queremos usar nuestro Formulario aquí adentro, ¡lo invitamos a la fiesta!
@@ -38,3 +39,4 @@ export class AppComponent {
   // ¡Así, si el nombre cambia en el servicio, aquí también cambiará por arte de magia!
   // ¿Para qué está aquí? Para que luego podamos mostrar este nombre en la pantalla (en el HTML).
   nombreApp = this.servicioFormulario.nombre;
+  } // <--- ¡ESTA LLAVE ES VITAL! Sin ella, el componente no se "resuelve"
